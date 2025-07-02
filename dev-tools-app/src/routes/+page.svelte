@@ -108,9 +108,9 @@
 	</div>
 
 	<!-- Debug info -->
-	<div class="mb-4 text-sm text-gray-500">
+	<!-- <div class="mb-4 text-sm text-gray-500">
 		Search: "{searchQuery}" | Found: {filteredTools.length} tools
-	</div>
+	</div> -->
 
 	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
 		{#each filteredTools as tool}
