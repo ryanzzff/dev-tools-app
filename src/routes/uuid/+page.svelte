@@ -3,9 +3,9 @@
 	let count = $state(1);
 
 	function generateUuid(): string {
-		return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-			const r = Math.random() * 16 | 0;
-			const v = c === 'x' ? r : (r & 0x3 | 0x8);
+		return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+			const r = (Math.random() * 16) | 0;
+			const v = c === 'x' ? r : (r & 0x3) | 0x8;
 			return v.toString(16);
 		});
 	}
@@ -47,11 +47,11 @@
 	});
 </script>
 
-<div class="max-w-4xl mx-auto">
-	<h1 class="text-3xl font-bold text-slate-900 mb-8">UUID Generator</h1>
+<div class="mx-auto max-w-4xl">
+	<h1 class="mb-8 text-3xl font-bold text-slate-900">UUID Generator</h1>
 
-	<div class="bg-white rounded-lg shadow-sm border border-slate-200 p-6 mb-6">
-		<div class="flex items-center gap-4 mb-6">
+	<div class="mb-6 rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+		<div class="mb-6 flex items-center gap-4">
 			<div class="flex items-center gap-2">
 				<label for="count" class="text-sm font-medium text-slate-700">Generate</label>
 				<input
@@ -61,14 +61,14 @@
 					max="100"
 					bind:value={count}
 					oninput={handleCountInput}
-					class="w-20 px-2 py-1 border border-slate-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+					class="w-20 rounded border border-slate-300 px-2 py-1 focus:border-transparent focus:ring-2 focus:ring-blue-500 focus:outline-none"
 				/>
 				<span class="text-sm text-slate-600">UUIDs</span>
 			</div>
-			
+
 			<button
 				onclick={generateUuids}
-				class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+				class="rounded-lg bg-blue-600 px-4 py-2 text-white transition-colors hover:bg-blue-700"
 			>
 				Generate
 			</button>
@@ -76,7 +76,7 @@
 			{#if generatedUuids.length > 1}
 				<button
 					onclick={copyAllUuids}
-					class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
+					class="rounded-lg bg-green-600 px-4 py-2 text-white transition-colors hover:bg-green-700"
 				>
 					Copy All
 				</button>
@@ -85,7 +85,7 @@
 			{#if generatedUuids.length > 0}
 				<button
 					onclick={clear}
-					class="px-4 py-2 bg-slate-600 text-white rounded-lg hover:bg-slate-700 transition-colors"
+					class="rounded-lg bg-slate-600 px-4 py-2 text-white transition-colors hover:bg-slate-700"
 				>
 					Clear
 				</button>
@@ -95,14 +95,14 @@
 		{#if generatedUuids.length > 0}
 			<div class="space-y-3">
 				{#each generatedUuids as uuid, index}
-					<div class="flex items-center justify-between p-3 bg-slate-50 rounded-lg">
+					<div class="flex items-center justify-between rounded-lg bg-slate-50 p-3">
 						<div class="flex items-center gap-3">
-							<span class="text-sm text-slate-500 w-8">#{index + 1}</span>
+							<span class="w-8 text-sm text-slate-500">#{index + 1}</span>
 							<code class="font-mono text-slate-900 select-all">{uuid}</code>
 						</div>
 						<button
 							onclick={() => copyToClipboard(uuid)}
-							class="px-3 py-1 text-sm bg-slate-200 text-slate-700 rounded hover:bg-slate-300 transition-colors"
+							class="rounded bg-slate-200 px-3 py-1 text-sm text-slate-700 transition-colors hover:bg-slate-300"
 						>
 							Copy
 						</button>
@@ -112,21 +112,22 @@
 		{/if}
 	</div>
 
-	<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-		<div class="p-4 bg-blue-50 rounded-lg">
-			<h3 class="text-sm font-medium text-blue-900 mb-2">About UUIDs</h3>
+	<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+		<div class="rounded-lg bg-blue-50 p-4">
+			<h3 class="mb-2 text-sm font-medium text-blue-900">About UUIDs</h3>
 			<p class="text-sm text-blue-800">
-				UUID (Universally Unique Identifier) is a 128-bit identifier. Version 4 UUIDs are randomly generated
-				and have a very low probability of collision, making them ideal for distributed systems.
+				UUID (Universally Unique Identifier) is a 128-bit identifier. Version 4 UUIDs are randomly
+				generated and have a very low probability of collision, making them ideal for distributed
+				systems.
 			</p>
 		</div>
 
-		<div class="p-4 bg-green-50 rounded-lg">
-			<h3 class="text-sm font-medium text-green-900 mb-2">UUID Format</h3>
+		<div class="rounded-lg bg-green-50 p-4">
+			<h3 class="mb-2 text-sm font-medium text-green-900">UUID Format</h3>
 			<p class="text-sm text-green-800">
-				Standard format: xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx<br>
-				• 32 hexadecimal digits<br>
-				• Displayed in 5 groups separated by hyphens<br>
+				Standard format: xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx<br />
+				• 32 hexadecimal digits<br />
+				• Displayed in 5 groups separated by hyphens<br />
 				• The '4' indicates version 4 (random)
 			</p>
 		</div>

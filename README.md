@@ -22,12 +22,14 @@ A beautiful collection of essential utilities for modern developers. Fast, secur
 ### 🎨 Design Features
 
 **Modern Glassmorphism Design**
+
 - Gradient backgrounds with blur effects
 - Semi-transparent cards with backdrop blur
 - Beautiful shadow and border effects
 - Smooth animations and transitions
 
 **Enhanced User Experience**
+
 - 🔍 **Smart Search** - Instantly filter tools as you type
 - 🎯 **Real-time Processing** - See results as you work
 - 🛡️ **100% Client-side** - No data sent to servers
@@ -44,12 +46,14 @@ A beautiful collection of essential utilities for modern developers. Fast, secur
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone <repository-url>
 cd dev-tools-app
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 # or
@@ -59,6 +63,7 @@ yarn install
 ```
 
 3. Start the development server:
+
 ```bash
 npm run dev
 # or
@@ -110,16 +115,19 @@ src/
 ## 🎯 Key Features
 
 ### Security & Privacy
+
 - **100% Client-side Processing** - All data stays in your browser
 - **No Server Communication** - No data transmission to external servers
 - **No Data Storage** - Nothing is saved or tracked
 
 ### Performance
+
 - **Real-time Updates** - Instant feedback as you type
 - **Lightweight** - Minimal bundle size with efficient code splitting
 - **Fast Load Times** - Optimized for performance
 
 ### Accessibility
+
 - **Keyboard Navigation** - Full keyboard support
 - **Screen Reader Friendly** - Proper ARIA labels and semantic HTML
 - **High Contrast** - Meets WCAG guidelines

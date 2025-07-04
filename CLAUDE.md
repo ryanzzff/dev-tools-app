@@ -23,12 +23,14 @@ A client-side developer tools web application built with SvelteKit 5 and Tailwin
 ## Architecture
 
 ### Framework Stack
+
 - **SvelteKit 5** with the new runes syntax (`$state`, `$derived`)
 - **Tailwind CSS 4** for styling with forms and typography plugins
 - **TypeScript** with strict configuration
 - **Vite** as the build tool
 
 ### Route Structure
+
 The application uses file-based routing with individual tool pages:
 
 - `/` - Main landing page with tool grid and search functionality
@@ -40,17 +42,21 @@ The application uses file-based routing with individual tool pages:
 - `/hash` - Hash generator (SHA-1, SHA-256, SHA-512)
 
 ### Key Components
+
 - `+layout.svelte` - Global layout with navigation header and gradient background
 - `+page.svelte` - Main landing page with searchable tool grid
 - Individual tool pages follow consistent UI patterns with gradient backgrounds, error handling, and real-time processing
 
 ### Svelte 5 Patterns
+
 The codebase uses Svelte 5's new runes syntax:
+
 - `$state()` for reactive variables
 - `$derived()` for computed values
 - Traditional reactive statements (`$:`) are still used where appropriate
 
 ### Styling Approach
+
 - Tailwind utility classes with custom gradients and backdrop blur effects
 - Consistent design system with purple/indigo/blue color scheme
 - Responsive grid layouts (1 column on mobile, 2 on tablet, 3 on desktop)
@@ -59,12 +65,14 @@ The codebase uses Svelte 5's new runes syntax:
 #### Design Features
 
 **Modern Glassmorphism Design**
+
 - Gradient backgrounds with blur effects
 - Semi-transparent cards with backdrop blur
 - Beautiful shadow and border effects
 - Smooth animations and transitions
 
 **Enhanced Visual Elements**
+
 - Gradient Headers - Beautiful color-coded icons and titles
 - Better Navigation - Rounded tabs with hover effects
 - Improved Typography - Gradient text and better spacing
@@ -77,19 +85,23 @@ The codebase uses Svelte 5's new runes syntax:
   - 🔴 Hash: Red theme
 
 **Better User Experience**
+
 - Larger Input Areas - More space for content
 - Enhanced Buttons - Gradient effects with smooth hovers
 - Better Error Handling - Icons with error messages
 - Improved Information Panels - More detailed and styled
 
 **Professional Polish**
+
 - Consistent Spacing - Better margins and padding
 - Smooth Animations - 300ms transitions everywhere
 - Focus States - Beautiful ring effects on inputs
 - Disabled States - Proper visual feedback
 
 ### Client-Side Architecture
+
 All tools perform processing entirely in the browser:
+
 - No API calls or server dependencies
 - Uses native browser APIs (btoa/atob for Base64, crypto for hashing, etc.)
 - Real-time updates without user interaction where appropriate
